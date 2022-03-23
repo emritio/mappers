@@ -1,15 +1,14 @@
----
 # Database connection string
-connection_string: "postgres://postgres:postgres@localhost:5432/mappers_dev"
+connection_string: 'postgres://postgres:postgres@postgres:5432/mappers_dev'
 
 # Connection keep alive timeout [default: 75]
 keep_alive: 75
 
 # The socket address to bind [default: 0.0.0.0:3000]
-listen_addresses: "0.0.0.0:3500"
+listen_addresses: '0.0.0.0:3500'
 
 # Maximum connections pool size [default: 20]
-pool_size: 150 
+pool_size: 10
 
 # Enable watch mode
 watch: false
@@ -60,4 +59,3 @@ function_sources:
     schema: public
     # function name
     function: function_source
-

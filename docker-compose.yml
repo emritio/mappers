@@ -1,0 +1,17 @@
+version: '3.8'
+
+services:
+  postgres:
+    image: postgres
+    restart: on-failure:5
+    ports:
+      - 5432:5432
+    volumes:
+      - ./init.sql:/docker-entrypoint-initdb.d/init.sql
+    env_file: .env
+  postgis:
+    build: ./docker-martin
+    restart: on-failure:5
+    depends_on:
+      - postgres
+    env_file: .env
